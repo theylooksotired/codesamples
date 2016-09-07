@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
+    
+    <title>Sample Node Server - Client</title>
+
+    <link href="css/stylesheets/public.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="js/jquery/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="js/public.js"></script>
+
+</head>
+<body>
+
+<body id="bodyFrame">
+
+  <h1>Sample Node Server - Client</h1>
+
+  <section>
+    <h2>HTML GET</h2>
+    <p>http://localhost:3000/html</p>
+    <button id="serviceStartHtml">Start me up!</button>
+    <div class="serviceResponse serviceHtml"></div>
+  </section>
+
+  <hr/>
+
+  <section>
+    <h2>HTML GET - Variable</h2>
+    <p>http://localhost:3000/html/infoExtra</p>
+    <button id="serviceStartHtmlVariable">Start me up!</button>
+    <div class="serviceResponse serviceHtmlVariable"></div>
+  </section>
+
+  <hr/>
+
+  <section>
+    <h2>HTML GET - Json</h2>
+    <p>http://localhost:3000/json</p>
+    <button id="serviceStartHtmlJson">Start me up!</button>
+    <div class="serviceResponse serviceHtmlJson"></div>
+  </section>
+
+  <hr/>
+
+  <section>
+    <h2>POST</h2>
+    <p>http://localhost:3000/post</p>
+    <button id="serviceStartPost">Start me up!</button>
+    <div class="serviceResponse servicePost"></div>
+  </section>
+
+  <hr/>
+
+  <section>
+    <h2>Mixed POST - GET</h2>
+    <p>http://localhost:3000/postGet/var1/var2</p>
+    <button id="serviceStartPostGet">Start me up!</button>
+    <div class="serviceResponse serviceHtmlPostGet"></div>
+  </section>
+
+</body>
+</html>
