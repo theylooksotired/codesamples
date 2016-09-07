@@ -1,0 +1,47 @@
+[
+    {
+        "id": "title-app",
+        "idGroup":"titles",
+        "name": "Title App"
+    },
+    {
+        "id": "title-page",
+        "idGroup":"titles",
+        "name": "Title page"
+    },
+    {
+        "id": "title-block",
+        "idGroup":"titles",
+        "name": "Title block"
+    },
+    {
+        "id": "button",
+        "idGroup":"buttons",
+        "name": "Button normal"
+    },
+    {
+        "id": "button-normal",
+        "idGroup":"buttons",
+        "name": "Button normal"
+    },
+    {
+        "id": "button-rich",
+        "idGroup":"buttons",
+        "name": "Button rich"
+    },
+    {
+        "id": "bloc-app",
+        "idGroup":"blocs",
+        "name": "Bloc app"
+    },
+    {
+        "id": "block",
+        "idGroup":"blocks",
+        "name": "Block"
+    },
+    {
+        "id": "form",
+        "idGroup":"form",
+        "name": "Formulaire"
+    }
+]

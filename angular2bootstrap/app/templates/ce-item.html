@@ -1,0 +1,53 @@
+<div class="ce_item ce_item_{{ info.id }}">
+	<h1 class="page-header">{{ info.name }}</h1>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="component_info">
+				<cite>{{ info.shortDescription }}</cite>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-8">
+			<ul class="nav nav-pills">
+				<li class="active"><a data-toggle="tab" href="#exemple">Example</a></li>
+				<li *ngFor="#code of info.codes"><a data-toggle="tab" href="#code_{{ code.id }}">{{ code.label }}</a></li>
+			</ul>
+			<div class="tab-content">
+				<div id="exemple" class="tab-pane active" innerHTML="{{ info.example }}"></div>
+				<div *ngFor="#code of info.codes" id="code_{{ code.id }}" class="tab-pane">
+					<pre><code class="language-{{ code.language }}" innerHTML="{{ code.code }}"></code></pre>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="panel panel-primary variations">
+				<div class="panel-heading">
+					<h3 class="panel-title">Variations / Versions</h3>
+				</div>
+				<ul class="list-group">
+					<a *ngFor="#version of info.versions" href="#" class="list-group-item">{{ version.label }}</a>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<hr/>
+	<div class="row">
+		<div class="col-md-12" innerHTML="{{ info.description }}"></div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-12">
+			<div class="panel panel-info">
+				<div class="panel-heading">
+					<h3 class="panel-title">View also</h3>
+				</div>
+				<div class="panel-body">
+					<ul>
+						<li *ngFor="#extraLink of info.extraLinks"><a href="#">{{ extraLink.label }}</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

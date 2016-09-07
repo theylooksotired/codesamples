@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html ng-app="ceApp">
+<head>
+
+    <title>Angular Material</title>
+
+	<!-- ANGULAR MATERIAL CSS -->
+	<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+	<!-- HIGHLIGHT CODE -->
+	<link rel="stylesheet" href="app/prism/prism.css">
+	<script src="app/prism/prism.js"></script>
+
+	<!-- TEMPLATE -->
+	<link rel="stylesheet" href="app/css/stylesheets/public.css" id="catalogueCss"/>
+
+</head>
+<body ng-controller="ceController" layout="column">
+
+	<div style="background:black; color:white; padding: 5px; font-size: 12px; text-align:right">
+		<a href="../angularmaterial/index.html"
+			style="display:inline-block; color:white; text-decoration:none; padding: 3px 10px; margin: 0 10px; border:1px solid gray;">
+			Angular 1.3 - Material Design
+		</a>
+		<a href="../angularui/index.html"
+			style="display:inline-block; color:white; text-decoration:none; padding: 3px 10px; margin: 0 10px; border:1px solid gray;">
+			Angular 1.3 - Angular Ui
+		</a>
+		<span> | </span>
+		<a href="../angular2bootstrap/index.html"
+			style="display:inline-block; color:white; text-decoration:none; padding: 3px 10px; margin: 0 10px; border:1px solid gray;">
+			Angular 2 - Bootstrap 3 - Jquery
+		</a>
+		<span> | </span>
+		<a href="" style="display:inline-block; color:white; text-decoration:none; padding: 3px 10px; margin: 0 10px; border:1px solid gray;"
+			onclick="var a = document.getElementById('catalogueCss'); a.x = 'catalogueinvert' == a.x ? 'public' : 'catalogueinvert'; a.href = 'app/css/stylesheets/' + a.x + '.css';">Toggle template</a>
+	</div>
+
+	
+	<div layout="column" layout-fill>
+		<md-toolbar>
+
+			<!-- HEADER - BEGIN -->
+			<header>
+				<div class="md-toolbar-tools">
+					<span class="logo">Angular Material</span>
+					<span flex></span>
+					<md-button>Home</md-button>
+					<md-button>Components</md-button>
+					<md-button>Documents</md-button>
+					<md-button>Contact</md-button>
+				</div>
+			</header>
+			<!-- HEADER - END -->
+
+		</md-toolbar>
+		<md-content>
+
+			<div layout="row">
+
+				<div flex="20">
+					<aside>
+
+						<!-- RECHERCHE - BEGIN -->
+						<md-autocomplete md-selected-item="selectedItem" md-search-text="searchText" md-items="item in getMatches(searchText)" md-item-text="item.display">
+							<md-item-template>
+								<span md-highlight-text="searchText">{{item.display}}</span>
+							</md-item-template>
+							<md-not-found>No results.</md-not-found>
+						</md-autocomplete>
+						<!-- RECHERCHE - END -->
+
+						<!-- MENU - BEGIN -->
+						<md-list>
+							<md-list-item>
+								<md-menu>
+									<md-button ng-click="$mdOpenMenu($event)" aria-label="Menu titles">Titles</md-button>
+									<md-menu-content>
+										<md-menu-item><md-button ng-click="loadComponent()">Title normal</md-button></md-menu-item>
+										<md-menu-item><md-button ng-click="loadComponent()">Title responsive</md-button></md-menu-item>
+										<md-menu-item><md-button ng-click="loadComponent()">Sub-titles</md-button></md-menu-item>
+									</md-menu-content>
+								</md-menu>
+							</md-list-item>
+							<md-list-item>
+								<md-menu>
+									<md-button ng-click="$mdOpenMenu($event)" aria-label="Menu boutons">Buttons</md-button>
+									<md-menu-content>
+										<md-menu-item><md-button ng-click="loadComponent()">Button OK</md-button></md-menu-item>
+										<md-menu-item><md-button ng-click="loadComponent()">Button riche</md-button></md-menu-item>
+										<md-menu-item><md-button ng-click="loadComponent()">Button ajouter</md-button></md-menu-item>
+										<md-menu-item><md-button ng-click="loadComponent()">Button annuler</md-button></md-menu-item>
+										<md-menu-item><md-button ng-click="loadComponent()">Button eliminer</md-button></md-menu-item>
+									</md-menu-content>
+								</md-menu>
+							</md-list-item>
+							<md-list-item>
+								<md-menu>
+									<md-button ng-click="$mdOpenMenu($event)" aria-label="Menu formulaires">Forms</md-button>
+									<md-menu-content>
+										<md-menu-item><md-button ng-click="loadComponent()">Text</md-button></md-menu-item>
+										<md-menu-item><md-button ng-click="loadComponent()">Selectbox</md-button></md-menu-item>
+										<md-menu-item><md-button ng-click="loadComponent()">Radio buttons</md-button></md-menu-item>
+									</md-menu-content>
+								</md-menu>
+							</md-list-item>
+						</md-list>
+						<!-- MENU - END -->
+
+					</aside>
+				</div>
+
+				<div flex="80">
+				
+					<div class="ce-content">
+
+						<div class="ce-content-title">
+							<h1 class="md-headline">Buttons</h1>
+							<p class="md-subhead">Ldnasjk dnasds nhjd asjbd jasbhd jasb djasbd djasb djasb djasnd asjkndas dio jqwoidjasdnasds nhjd asjbd</p>
+						</div>
+
+			           	<div layout="row" class="ce-content-top">
+							<div flex="60">
+
+								<md-tabs md-selected="selectedIndex" md-stretch-tabs="always">
+									<md-tab md-on-select="onTabSelected(tab)" md-on-deselect="announceDeselected(tab)">
+										<md-tab-label>Exemple</md-tab-label>
+										<md-tab-body>
+											<iframe style="width:100%;height:400px;border:0;background:#EFEFEF;margin-top:5px;"></iframe>
+										</md-tab-body>
+									</md-tab>
+									<md-tab md-on-select="onTabSelected(tab)" md-on-deselect="announceDeselected(tab)">
+										<md-tab-label>Markup</md-tab-label>
+										<md-tab-body>
+											<pre><code class="language-markup">&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;response value=&quot;ok&quot; xml:lang=&quot;en&quot;&gt;
+  &lt;text&gt;Ok&lt;/text&gt;
+  &lt;comment html_allowed=&quot;true&quot;/&gt;
+  &lt;ns1:description&gt;&lt;![CDATA[
+  CDATA is &lt;not&gt; magical.
+  ]]&gt;&lt;/ns1:description&gt;
+  &lt;a&gt;&lt;/a&gt; &lt;a/&gt;
+&lt;/response&gt;
+</code></pre>
+										</md-tab-body>
+									</md-tab>
+									<md-tab md-on-select="onTabSelected(tab)" md-on-deselect="announceDeselected(tab)">
+										<md-tab-label>HTML</md-tab-label>
+										<md-tab-body>
+											<pre><code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;title&gt;Title&lt;/title&gt;
+
+&lt;style&gt;body {width: 500px;}&lt;/style&gt;
+
+&lt;script type=&quot;application/javascript&quot;&gt;
+  function $init() {return true;}
+&lt;/script&gt;
+
+&lt;body&gt;
+  &lt;p checked class=&quot;title&quot; id=&#39;title&#39;&gt;Title&lt;/p&gt;
+  &lt;!-- here goes the rest of the page --&gt;
+&lt;/body&gt;
+</code></pre>
+										</md-tab-body>
+									</md-tab>
+									<md-tab md-on-select="onTabSelected(tab)" md-on-deselect="announceDeselected(tab)">
+										<md-tab-label>CSS</md-tab-label>
+										<md-tab-body>
+											<pre><code class="language-css">input {
+  line-height: normal;
+}
+input[type="checkbox"],
+input[type="radio"] {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+input[type="search"] {
+  -webkit-box-sizing: content-box;
+     -moz-box-sizing: content-box;
+          box-sizing: content-box;
+  -webkit-appearance: textfield;
+}
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}</code></pre>
+										</md-tab-body>
+									</md-tab>
+									<md-tab md-on-select="onTabSelected(tab)" md-on-deselect="announceDeselected(tab)">
+										<md-tab-label>JS</md-tab-label>
+										<md-tab-body>
+											<pre><code class="language-js">System.register(['angular2/platform/browser', './app.component'], function(exports_1) {
+    var browser_1, app_component_1;
+    return {
+        setters:[
+            function (browser_1_1) {
+                browser_1 = browser_1_1;
+            },
+            function (app_component_1_1) {
+                app_component_1 = app_component_1_1;
+            }],
+        execute: function() {
+            browser_1.bootstrap(app_component_1.AppComponent);
+        }
+    }
+});</code></pre>
+										</md-tab-body>
+									</md-tab>
+								</md-tabs>
+
+							</div>
+							<div flex="40">
+
+								<div class="versions">
+									<md-card>
+										<md-card-title>
+											<md-card-title-text>
+												<span class="md-headline">Versions / variations</span>
+											</md-card-title-text>
+										</md-card-title>
+										<md-card-actions layout="row" layout-align="start center">
+											<ul>
+												<li><md-button>Button OK</md-button></li>
+												<li><md-button>Button Ajouter</md-button></li>
+												<li><md-button>Button Eliminer</md-button></li>
+												<li><md-button>Button Annuler</md-button></li>
+												<li><md-button>Button Sortir</md-button></li>
+											</ul>
+										</md-card-actions>
+									</md-card>
+								</div>
+
+							</div>
+						</div>
+
+						<div layout="row" class="ce-content-bottom">
+
+							<div class="ce-content-bottom">
+								<md-card>
+									<md-card-content>
+										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas egestas orci ipsum, at aliquam arcu scelerisque vitae. Mauris mi sem, consectetur ac augue in, malesuada volutpat lectus. Vestibulum ultricies convallis scelerisque. Quisque id lacus tempus, interdum nunc ac, maximus est.</p>
+
+										<div class="alert alert-warning" role="alert">
+											<md-icon md-font-icon="warning"></md-icon>
+											Lorem ipsum dolor sit amet !
+										</div>
+									</md-card-content>
+									<md-card-actions layout="row" layout-align="start center">
+										<ul>
+											<li><a href="#">Blocks</a></li>
+											<li><a href="#">List objects</a></li>
+											<li><a href="#">Ther lists</a></li>
+										</ul>
+									</md-card-actions>
+								</md-card>
+							</div>
+
+						</div>
+
+					</div>
+				
+				</div>
+			</div>
+
+		</md-content>
+	</div>
+
+			
+
+
+    <!-- Angular JS - BEGIN -->
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+	<!-- Angular JS - END -->
+
+	<!-- Angular Material JS - BEGIN -->
+	<script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+	<!-- Angular Material JS - END -->
+
+    <script>
+        //var ceApp = angular.module("ceApp",["ngMaterial"]);
+        var ceApp = angular.module("ceApp",["ngMaterial"])
+					.config(function($mdThemingProvider) {
+						$mdThemingProvider.theme('default')
+						.primaryPalette('blue')
+						.accentPalette('red');
+					});
+        ceApp.controller("ceController",function($scope){
+            $scope.buttonName= "Click Me"
+        });
+    </script>
+</body>
+</html>

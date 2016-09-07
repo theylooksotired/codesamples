@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ui.bootstrap.demo" id="top">
+<head>
+
+		<title>Angular UI</title>
+
+	    <!-- Bootstrap CSS -->
+	    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css"/>
+
+		<!-- TEMPLATE -->
+		<link rel="stylesheet" href="app/css/stylesheets/public.css" id="catalogueCss"/>
+
+		<!-- HIGHLIGHT CODE -->
+		<link rel="stylesheet" href="app/prism/prism.css">
+		<script src="app/prism/prism.js"></script>
+
+</head>
+<body class="ng-cloak">
+
+	<div style="background:black; color:white; padding: 5px; font-size: 12px; text-align:right">
+		<a href="../angularmaterial/index.html"
+			style="display:inline-block; color:white; text-decoration:none; padding: 3px 10px; margin: 0 10px; border:1px solid gray;">
+			Angular 1.3 - Material Design
+		</a>
+		<a href="../angularui/index.html"
+			style="display:inline-block; color:white; text-decoration:none; padding: 3px 10px; margin: 0 10px; border:1px solid gray;">
+			Angular 1.3 - Angular Ui
+		</a>
+		<span> | </span>
+		<a href="../angular2bootstrap/index.html"
+			style="display:inline-block; color:white; text-decoration:none; padding: 3px 10px; margin: 0 10px; border:1px solid gray;">
+			Angular 2 - Bootstrap 3 - Jquery
+		</a>
+		<span> | </span>
+		<a href="" style="display:inline-block; color:white; text-decoration:none; padding: 3px 10px; margin: 0 10px; border:1px solid gray;"
+			onclick="var a = document.getElementById('catalogueCss'); a.x = 'catalogueinvert' == a.x ? 'public' : 'catalogueinvert'; a.href = 'app/css/stylesheets/' + a.x + '.css';">Toggle template</a>
+	</div>
+  
+
+
+
+	<!-- HEADER -->
+	<header>
+		<nav class="navbar">
+	      <div class="container-fluid">
+	        <div class="navbar-header">
+	          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+	            <span class="sr-only">Menu</span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	          </button>
+	          <a class="navbar-brand" href="#">Angular UI</a>
+	        </div>
+	        <div id="navbar" class="navbar-collapse collapse">
+	          <form class="navbar-form navbar-right">
+	            <input type="text" class="form-control" placeholder="Search...">
+	          </form>
+	          <ul class="nav navbar-nav navbar-right">
+	            <li><a href="#">Home</a></li>
+	            <li><a href="#">Components</a></li>
+	            <li><a href="#">Documents</a></li>
+	            <li><a href="#">Contact</a></li>
+	          </ul>
+	        </div>
+	      </div>
+	    </nav>
+	</header>
+	<!-- HEADER - END -->
+
+	<div class="container-fluid">
+      <div class="row">
+
+
+
+      	<div class="col-sm-3 col-md-2" role="sidebar" ng-controller="MenuCtrl">
+			<uib-accordion class="list-group" ng-repeat="group in groups">
+				<uib-accordion-group is-open="status.open">
+					<uib-accordion-heading>
+						{{ group.name }} <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+					</uib-accordion-heading>
+					<ul ng-repeat="item in group.items">
+						<li>
+							<a href="#" class="list-group-item">{{ item.name }}</a>
+						</li>
+					</ul>
+				</uib-accordion-group>
+			</uib-accordion>
+		</div>
+
+
+		<div class="col-sm-9 col-md-10" ng-controller="ItemCtrl">
+			<div class="ce_item ce_item_{{ info.id }}">
+				<h1 class="page-header">{{ info.name }}</h1>
+				<div class="row">
+					<div class="col-md-12">
+						<div class="component_info">
+							<cite>{{ info.shortDescription }}</cite>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-8">
+						<uib-tabset justified="true">
+							<uib-tab heading="Exemple"><div ng-bind-html="trustAsHtml(info.example)"></div></uib-tab>
+							<uib-tab ng-repeat="code in info.codes" heading="{{ code.label }}">
+								<pre><code class="language-{{ code.language }}" ng-bind-html="trustAsHtml(code.code)"></code></pre>
+							</uib-tab>
+						</uib-tabset>
+					</div>
+					<div class="col-md-4">
+						<div class="panel panel-primary variations">
+							<div class="panel-heading">
+								<h3 class="panel-title">Variations / Versions</h3>
+							</div>
+							<ul class="list-group">
+								<a ng-repeat="version in info.versions" href="#" class="list-group-item">{{ version.label }}</a>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<hr/>
+				<div class="row">
+					<div class="col-md-12" ng-bind-html="trustAsHtml(info.description)"></div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-12">
+						<div class="panel panel-info">
+							<div class="panel-heading">
+								<h3 class="panel-title">Voir aussi</h3>
+							</div>
+							<div class="panel-body">
+								<ul>
+									<li ng-repeat="extraLink in info.extraLinks"><a href="#">{{ extraLink.label }}</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+      </div>
+    </div>
+
+
+
+
+
+
+
+	<!-- Angular JS - BEGIN -->
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.1/angular-sanitize.js"></script>
+	<!-- Angular JS - END -->
+
+	<!-- Angular UI JS - BEGIN -->
+	<script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-1.1.2.min.js"></script>
+	<!-- Angular UI JS - END -->
+
+	<script>
+	angular.module('ui.bootstrap.demo', ['ui.bootstrap', 'ngSanitize'])
+		.controller('MenuCtrl', function($scope, $sce){
+			$scope.groups = [
+    				{id: 'titre', name: 'Titles', items:[
+                        {id: 'title1', name: 'Title1'},
+                        {id: 'title2', name: 'Title2'},
+                        {id: 'title3', name: 'Title3'},
+                        {id: 'title4', name: 'Title4'}
+                    ]},
+    				{id: 'buttons', name: 'Buttons', items:[
+                        {id: 'button1', name: 'Button1'},
+                        {id: 'button2', name: 'Button2'},
+                        {id: 'button3', name: 'Button3'},
+                        {id: 'button4', name: 'Button4'}
+                    ]},
+    				{id: 'blocks', name: 'Blocks', items:[
+                        {id: 'block1', name: 'Block1'},
+                        {id: 'block2', name: 'Block2'},
+                        {id: 'block3', name: 'Block3'},
+                        {id: 'block4', name: 'Block4'}
+                    ]}
+				    ];
+		})
+		.controller('ItemCtrl', function($scope, $sce){
+			$scope.info = {
+					id: 'button',
+					name: 'Button',
+					shortDescription: 'Displays collapsible content panels for presenting information in a limited amount of space.',
+					description: `<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas egestas orci ipsum, at aliquam arcu scelerisque vitae. Mauris mi sem, consectetur ac augue in, malesuada volutpat lectus. Vestibulum ultricies convallis scelerisque. Quisque id lacus tempus, interdum nunc ac, maximus est.</p>
+							<div class="alert alert-success" role="alert">Well done! You successfully read this important alert message.</div>
+							<div class="alert alert-info" role="alert">Heads up! This alert needs your attention, but it's not super important.</div>
+							<div class="alert alert-warning" role="alert">Warning! Better check yourself, you're not looking too good.</div>
+							<div class="alert alert-danger" role="alert">Oh snap! Change a few things up and try submitting again.</div>`,
+					example: `<iframe style="width:100%;height:400px;border:0;background:#EFEFEF;margin-top:5px;"></iframe>`,
+					codes: [
+			{
+				id: 'html',
+				label: 'HTML',
+				language: 'markup',
+				code: `&lt;!DOCTYPE html&gt;
+&lt;title&gt;Title&lt;/title&gt;
+
+&lt;style&gt;body {width: 500px;}&lt;/style&gt;
+
+&lt;script type=&quot;application/javascript&quot;&gt;
+  function $init() {return true;}
+&lt;/script&gt;
+
+&lt;body&gt;
+  &lt;p checked class=&quot;title&quot; id=&#39;title&#39;&gt;Title&lt;/p&gt;
+  &lt;!-- here goes the rest of the page --&gt;
+&lt;/body&gt;`
+			},
+			{
+				id: 'css',
+				label: 'CSS',
+				language: 'css',
+				code: `input {
+  line-height: normal;
+}
+input[type="checkbox"],
+input[type="radio"] {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+input[type="search"] {
+  -webkit-box-sizing: content-box;
+     -moz-box-sizing: content-box;
+          box-sizing: content-box;
+  -webkit-appearance: textfield;
+}
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}`
+						},
+						{
+							id: 'js',
+							label: 'JavaScript',
+							language: 'js',
+							code: `System.register(['angular2/platform/browser', './app.component'], function(exports_1) {
+			    var browser_1, app_component_1;
+			    return {
+			        setters:[
+			            function (browser_1_1) {
+			                browser_1 = browser_1_1;
+			            },
+			            function (app_component_1_1) {
+			                app_component_1 = app_component_1_1;
+			            }],
+			        execute: function() {
+			            browser_1.bootstrap(app_component_1.AppComponent);
+			        }
+			    }
+			});`
+						}
+					],
+					versions: [
+						{ id: 'add', label: 'Add' },
+						{ id: 'ok', label: 'OK' },
+						{ id: 'cancel', label: 'Cancel' },
+						{ id: 'confirmer', label: 'Confirm' }
+					],
+					extraLinks: [
+						{ label: 'Blocs', link: '#' },
+						{ label: 'Mozilla', link: 'www.mozilla.org' },
+						{ label: 'HTML', link: 'html://www.w3c.org' },
+					]
+				};
+
+			$scope.trustAsHtml = function(html) {
+				return $sce.trustAsHtml(html);
+			}
+
+		});
+	</script>
+
+
+
+</body>
+</html>

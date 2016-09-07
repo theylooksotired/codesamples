@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Angular2 Bootstrap</title>
+
+	<!-- ANGULAR  -->
+	<script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
+	<script src="node_modules/systemjs/dist/system.src.js"></script>
+	<script src="node_modules/rxjs/bundles/Rx.js"></script>
+	<script src="node_modules/angular2/bundles/angular2.dev.js"></script>
+	<script src="node_modules/angular2/bundles/http.dev.js"></script>
+
+	<!-- BOOTSTRAP -->
+	<script src="node_modules/jquery/dist/jquery.min.js"></script>
+	<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css"/>
+
+	<!-- HIGHLIGHT CODE -->
+	<link rel="stylesheet" href="app/prism/prism.css">
+	<script src="app/prism/prism.js"></script>
+
+	<!-- TEMPLATE -->
+	<link rel="stylesheet" href="app/css/stylesheets/public.css" id="catalogueCss"/>
+
+</head>
+<body>
+
+	<div style="background:black; color:white; padding: 5px; font-size: 12px; text-align:right">
+		<a href="../angularmaterial/index.html"
+			style="display:inline-block; color:white; text-decoration:none; padding: 3px 10px; margin: 0 10px; border:1px solid gray;">
+			Angular 1.3 - Material Design
+		</a>
+		<a href="../angularui/index.html"
+			style="display:inline-block; color:white; text-decoration:none; padding: 3px 10px; margin: 0 10px; border:1px solid gray;">
+			Angular 1.3 - Angular Ui
+		</a>
+		<span> | </span>
+		<a href="../angular2bootstrap/index.html"
+			style="display:inline-block; color:white; text-decoration:none; padding: 3px 10px; margin: 0 10px; border:1px solid gray;">
+			Angular 2 - Bootstrap 3 - Jquery
+		</a>
+		<span> | </span>
+		<a href="" style="display:inline-block; color:white; text-decoration:none; padding: 3px 10px; margin: 0 10px; border:1px solid gray;"
+			onclick="var a = document.getElementById('catalogueCss'); a.x = 'catalogueinvert' == a.x ? 'public' : 'catalogueinvert'; a.href = 'app/css/stylesheets/' + a.x + '.css';">Toggle template</a>
+	</div>
+
+	<!-- HEADER -->
+	<header>
+		<nav class="navbar">
+	      <div class="container-fluid">
+	        <div class="navbar-header">
+	          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+	            <span class="sr-only">Menu</span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	          </button>
+	          <a class="navbar-brand" href="#">Angular2 Bootstrap</a>
+	        </div>
+	        <div id="navbar" class="navbar-collapse collapse">
+	          <form class="navbar-form navbar-right">
+	            <input type="text" class="form-control" placeholder="Rechercher...">
+	          </form>
+	          <ul class="nav navbar-nav navbar-right">
+	            <li><a href="#">Home</a></li>
+	            <li><a href="#">Components</a></li>
+	            <li><a href="#">Documents</a></li>
+	            <li><a href="#">Contact</a></li>
+	          </ul>
+	        </div>
+	      </div>
+	    </nav>
+	</header>
+	<!-- HEADER - END -->
+	
+	<!-- APP - BEGIN -->
+	<ce-app></ce-app>
+    <div class="container-fluid">
+      <div class="row">
+      	<div class="col-sm-3 col-md-2" role="sidebar">
+			<ce-menu></ce-menu>
+		</div>
+		<div class="col-sm-9 col-md-10" >
+			<ce-item></ce-item>
+		</div>
+      </div>
+    </div>
+	<!-- APP - END -->
+
+	<script>
+		System.config({
+			packages: {
+				app: {
+					format: 'register',
+					defaultExtension: 'js'
+				}
+			}
+		});
+		System.import('app/boot')
+			.then(null, console.error.bind(console));
+	</script>
+
+
+</body>
+</html>

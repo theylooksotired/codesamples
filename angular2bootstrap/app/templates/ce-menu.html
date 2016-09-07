@@ -1,0 +1,8 @@
+<div class="list-group" *ngFor="#group of groups">
+	<a href="#sidebar_menu_{{ group.id }}" class="list-group-item list-group-item-info" data-toggle="collapse">
+		<span class="glyphicon glyphicon-menu-right"></span> {{ group.name }}
+	</a>
+	<div class="collapse" id="sidebar_menu_{{ group.id }}">
+		<a *ngFor="#item of group.items" href="#" class="list-group-item" (click)="menuChange(item.id)">{{ item.name }}</a>
+	</div>
+</div>
