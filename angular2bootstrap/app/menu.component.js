@@ -1,4 +1,6 @@
-System.register(['angular2/core'], function(exports_1) {
+System.register(['angular2/core'], function(exports_1, context_1) {
+    "use strict";
+    var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -19,23 +21,23 @@ System.register(['angular2/core'], function(exports_1) {
             MenuComponent = (function () {
                 function MenuComponent() {
                     this.groups = [
-                        { id: 'titre', name: 'Titres', items: [
-                                { id: 'titre-de-lapplication', name: 'Titre de l\'application' },
-                                { id: 'titre-de-la-page', name: 'Titre de la page' },
-                                { id: 'indicateur-detape', name: 'Indicateur d\'étape' },
-                                { id: 'titre-du-bloc-fonctionnel', name: 'Titre du bloc fonctionnel' }
+                        { id: 'title', name: 'Titles', items: [
+                                { id: 'title-application', name: 'Title application' },
+                                { id: 'title-page', name: 'Title page' },
+                                { id: 'indication', name: 'Indication' },
+                                { id: 'title-blocks', name: 'Title blocks' }
                             ] },
-                        { id: 'boutons', name: 'Boutons', items: [
-                                { id: 'bouton', name: 'Bouton normal' },
-                                { id: 'bouton-normal', name: 'Bouton normal' },
-                                { id: 'bouton-riche', name: 'Bouton riche' }
+                        { id: 'buttons', name: 'Buttons', items: [
+                                { id: 'button', name: 'Button normal' },
+                                { id: 'button-normal', name: 'Button abnormal' },
+                                { id: 'button-riche', name: 'Button rich' }
                             ] },
-                        { id: 'blocs', name: 'Blocs2', items: [
-                                { id: 'bloc-applicatif', name: 'Bloc applicatif' },
-                                { id: 'bloc-fonctionnel', name: 'Bloc fonctionnel' }
+                        { id: 'blocks', name: 'Blocks', items: [
+                                { id: 'block1', name: 'Block 1' },
+                                { id: 'block2', name: 'Block 2' }
                             ] },
-                        { id: 'formulaires', name: 'Formulaires', items: [
-                                { id: 'formulaire-simple', name: 'Formulaire simple' }
+                        { id: 'forms', name: 'Forms', items: [
+                                { id: 'simple-form', name: 'Simple form' }
                             ] }
                     ];
                     this.menuChange = function (idItem) {
@@ -50,7 +52,7 @@ System.register(['angular2/core'], function(exports_1) {
                     __metadata('design:paramtypes', [])
                 ], MenuComponent);
                 return MenuComponent;
-            })();
+            }());
             exports_1("MenuComponent", MenuComponent);
         }
     }

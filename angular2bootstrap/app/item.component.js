@@ -1,4 +1,6 @@
-System.register(['angular2/core'], function(exports_1) {
+System.register(['angular2/core'], function(exports_1, context_1) {
+    "use strict";
+    var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -19,15 +21,15 @@ System.register(['angular2/core'], function(exports_1) {
             ItemComponent = (function () {
                 function ItemComponent() {
                     this.info = {
-                        id: 'bouton',
-                        name: 'Bouton',
+                        id: 'button',
+                        name: 'Button',
                         shortDescription: 'Displays collapsible content panels for presenting information in a limited amount of space.',
-                        description: "<p>Les boutons d'actions d\u00E9clenchent un traitement qui engage la responsabilit\u00E9 de l'utilisateur. Ils ne doivent jamais servir comme moyen de navigation mais uniquement pour d\u00E9clencher un traitement (sauf le bouton Retour).</p>\n\t\t\t\t<p>Pour savoir combiner les boutons correctement, consultez les cin\u00E9matiques.</p>\n\t\t\t\t<p>Se reporter au r\u00E9f\u00E9rentiel d'accessibilit\u00E9 des pages web du groupe pour trouver toutes les r\u00E8gles et bonnes pratiques en termes d'accessibilit\u00E9 \u00E0 mettre en \u0153uvre pour permettre aux personnes pr\u00E9sentant un handicap visuel, moteur ou cognitif d'utiliser une application.</p>\n\t\t\t\t<p>Si vous avez besoin d'un autre bouton que ceux ci-dessous, contactez ACM Organisation ou EIDP Ergonomie des normes intranet/internet.</p>\n\t\t\t\t<div class=\"alert alert-success\" role=\"alert\">Well done! You successfully read this important alert message.</div>\n\t\t\t\t<div class=\"alert alert-info\" role=\"alert\">Heads up! This alert needs your attention, but it's not super important.</div>\n\t\t\t\t<div class=\"alert alert-warning\" role=\"alert\">Warning! Better check yourself, you're not looking too good.</div>\n\t\t\t\t<div class=\"alert alert-danger\" role=\"alert\">Oh snap! Change a few things up and try submitting again.</div>",
+                        description: "<p>Displays collapsible content panels for presenting information in a limited amount of space.</p>\n\t\t\t\t<div class=\"alert alert-success\" role=\"alert\">Well done! You successfully read this important alert message.</div>\n\t\t\t\t<div class=\"alert alert-info\" role=\"alert\">Heads up! This alert needs your attention, but it's not super important.</div>\n\t\t\t\t<div class=\"alert alert-warning\" role=\"alert\">Warning! Better check yourself, you're not looking too good.</div>\n\t\t\t\t<div class=\"alert alert-danger\" role=\"alert\">Oh snap! Change a few things up and try submitting again.</div>",
                         example: "<iframe style=\"width:100%;height:400px;border:0;background:#EFEFEF;margin-top:5px;\"></iframe>",
                         codes: [
                             {
-                                id: 'devBooster',
-                                label: 'Code DevBooster',
+                                id: 'xaml',
+                                label: 'XAML',
                                 language: 'markup',
                                 code: "&lt;?xml version=&quot;1.0&quot;?&gt;\n&lt;response value=&quot;ok&quot; xml:lang=&quot;en&quot;&gt;\n  &lt;text&gt;Ok&lt;/text&gt;\n  &lt;comment html_allowed=&quot;true&quot;/&gt;\n  &lt;ns1:description&gt;&lt;![CDATA[\n  CDATA is &lt;not&gt; magical.\n  ]]&gt;&lt;/ns1:description&gt;\n  &lt;a&gt;&lt;/a&gt; &lt;a/&gt;\n&lt;/response&gt;"
                             },
@@ -51,15 +53,15 @@ System.register(['angular2/core'], function(exports_1) {
                             }
                         ],
                         versions: [
-                            { id: 'ajouter', label: 'Ajouter' },
+                            { id: 'add', label: 'Add' },
                             { id: 'ok', label: 'OK' },
                             { id: 'cancel', label: 'Cancel' },
-                            { id: 'confirmer', label: 'Confirmer' }
+                            { id: 'confirm', label: 'Confirm' }
                         ],
                         extraLinks: [
-                            { label: 'Bloc boutons', link: '#' },
-                            { label: 'Reference Mozilla', link: 'www.mozilla.org' },
-                            { label: 'Reference HTML', link: 'html://www.w3c.org' },
+                            { label: 'Blocks', link: '#' },
+                            { label: 'Mozilla', link: 'www.mozilla.org' },
+                            { label: 'HTML', link: 'html://www.w3c.org' },
                         ]
                     };
                 }
@@ -71,7 +73,7 @@ System.register(['angular2/core'], function(exports_1) {
                     __metadata('design:paramtypes', [])
                 ], ItemComponent);
                 return ItemComponent;
-            })();
+            }());
             exports_1("ItemComponent", ItemComponent);
         }
     }

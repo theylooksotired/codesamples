@@ -7,23 +7,23 @@ import {Component} from 'angular2/core';
 
 export class MenuComponent {
     public groups = [
-    				{id: 'titre', name: 'Titres', items:[
-                        {id: 'titre-de-lapplication', name: 'Titre de l\'application'},
-                        {id: 'titre-de-la-page', name: 'Titre de la page'},
-                        {id: 'indicateur-detape', name: 'Indicateur d\'étape'},
-                        {id: 'titre-du-bloc-fonctionnel', name: 'Titre du bloc fonctionnel'}
+    				{id: 'title', name: 'Titles', items:[
+                        {id: 'title-application', name: 'Title application'},
+                        {id: 'title-page', name: 'Title page'},
+                        {id: 'indication', name: 'Indication'},
+                        {id: 'title-blocks', name: 'Title blocks'}
                     ]},
-    				{id: 'boutons', name: 'Boutons', items:[
-                        {id: 'bouton', name: 'Bouton normal'},
-                        {id: 'bouton-normal', name: 'Bouton normal'},
-                        {id: 'bouton-riche', name: 'Bouton riche'}
+    				{id: 'buttons', name: 'Buttons', items:[
+                        {id: 'button', name: 'Button normal'},
+                        {id: 'button-normal', name: 'Button abnormal'},
+                        {id: 'button-riche', name: 'Button rich'}
                     ]},
-    				{id: 'blocs', name: 'Blocs2', items:[
-                        {id: 'bloc-applicatif', name: 'Bloc applicatif'},
-                        {id: 'bloc-fonctionnel', name: 'Bloc fonctionnel'}
+    				{id: 'blocks', name: 'Blocks', items:[
+                        {id: 'block1', name: 'Block 1'},
+                        {id: 'block2', name: 'Block 2'}
                     ]},
-    				{id: 'formulaires', name: 'Formulaires', items:[
-                        {id: 'formulaire-simple', name: 'Formulaire simple'}
+    				{id: 'forms', name: 'Forms', items:[
+                        {id: 'simple-form', name: 'Simple form'}
                     ]}
 				    ];
 
