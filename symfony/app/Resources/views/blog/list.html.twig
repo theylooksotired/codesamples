@@ -1,0 +1,12 @@
+<h2>List of blog posts - Page {{ page }}</h2>
+<div class="list">
+
+	{% for i in 1..10 %}
+		{% if i > 5 %}
+		    <div class="{{ cycle(['even', 'odd'], i) }}">
+		      {{ i }}
+		    </div>
+		{% endif %}
+	{% endfor %}
+
+</div>

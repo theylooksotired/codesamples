@@ -1,0 +1,17 @@
+AppBundle\Entity\Article:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\ArticleRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        title:
+            type: text
+        description:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }

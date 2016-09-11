@@ -1,0 +1,7 @@
+app_post:
+    resource: "@AppBundle/Controller/PostController.php"
+    type:     annotation
+
+app:
+    resource: "@AppBundle/Controller"
+    type:     annotation
